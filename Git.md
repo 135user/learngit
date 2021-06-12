@@ -290,4 +290,27 @@ no changes added to commit (use "git add" and/or "git commit -a")
 
 #### 		一、添加远程仓库
 
-​		
+​		1.首先先创建一个github账号，可以在主目录下看看有没有相关的.ssh文件夹（windows C:\Windows\System32\drivers\etc\hosts），如果有的话，再看看这个目录下有没有`id_rsa`和`id_rsa.pub`这两个文件。`id_rsa`是私钥，不能泄露；`id_rsa.pub`是公钥，可以将之公布出去。
+
+​		如果没有这个文件夹的话，可以使用命令
+
+```
+$ ssh-keygen -t rsa -C "youremail@example.com"
+```
+
+​		"youremail@example.com"这个命令应该是github注册的具体的邮箱。（接下来一路Enter就行了）
+
+​		2.登陆github账号，选择setting
+
+![image-20210611164046642](C:\Users\ipfang\AppData\Roaming\Typora\typora-user-images\image-20210611164046642.png)
+
+​		选择ssh，然后在添加ssh keys
+
+![image-20210611164152692](C:\Users\ipfang\AppData\Roaming\Typora\typora-user-images\image-20210611164152692.png)
+
+​			然后在title随便填，然后填写自己的公钥。`id_rsa.pub`里面的内容。这样就可以先连接好ssh。
+
+​			在首页找到“Create a new repo”按钮创建自己新的仓库。![image-20210612115630000](C:\Users\ipfang\AppData\Roaming\Typora\typora-user-images\image-20210612115630000.png)
+
+​		直接在填写name，然后直接创建即可，然后在cmd中回到自己本地的仓库。
+
